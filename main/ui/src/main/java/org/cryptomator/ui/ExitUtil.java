@@ -130,6 +130,7 @@ public class ExitUtil {
 		return new TrayIcon(image, localization.getString("app.name"), popup);
 	}
 
+	// TODO deduplicate (MainController.java), make async, make injectable
 	/**
 	 * @return true if <code>defaults read -g AppleInterfaceStyle</code> has an exit status of <code>0</code> (i.e. _not_ returning "key not found").
 	 */

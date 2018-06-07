@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 import javax.inject.Inject;
@@ -199,10 +200,14 @@ public class MainController implements ViewController {
 		stage.setResizable(false);
 		loadFont("/css/ionicons.ttf");
 		loadFont("/css/fontawesome-webfont.ttf");
-		if (SystemUtils.IS_OS_MAC_OSX) {
+		if (SystemUtils.IS_OS_MAC_OSX && isMacMenuBarDarkMode()) {
 			subs = subs.and(EasyBind.includeWhen(mainWindow.getScene().getRoot().getStyleClass(), ACTIVE_WINDOW_STYLE_CLASS, mainWindow.focusedProperty()));
 			subs = subs.and(EasyBind.includeWhen(mainWindow.getScene().getRoot().getStyleClass(), INACTIVE_WINDOW_STYLE_CLASS, mainWindow.focusedProperty().not()));
 			Application.setUserAgentStylesheet(getClass().getResource("/css/mac_theme.css").toString());
+		} else if (SystemUtils.IS_OS_MAC_OSX) {
+			subs = subs.and(EasyBind.includeWhen(mainWindow.getScene().getRoot().getStyleClass(), ACTIVE_WINDOW_STYLE_CLASS, mainWindow.focusedProperty()));
+			subs = subs.and(EasyBind.includeWhen(mainWindow.getScene().getRoot().getStyleClass(), INACTIVE_WINDOW_STYLE_CLASS, mainWindow.focusedProperty().not()));
+			Application.setUserAgentStylesheet(getClass().getResource("/css/mac_dark_theme.css").toString());
 		} else if (SystemUtils.IS_OS_LINUX) {
 			stage.getIcons().add(new Image(getClass().getResourceAsStream("/window_icon_512.png")));
 			Application.setUserAgentStylesheet(getClass().getResource("/css/linux_theme.css").toString());
@@ -212,6 +217,20 @@ public class MainController implements ViewController {
 		}
 		exitUtil.initExitHandler(this::gracefulShutdown);
 		listenToFileOpenRequests(stage);
+	}
+
+	// TODO deduplicate (ExitUtil.java), make async, make injectable
+	private boolean isMacMenuBarDarkMode() {
+		try {
+			// check for exit status only. Once there are more modes than "dark" and "default", we might need to analyze string contents..
+			final Process proc = Runtime.getRuntime().exec(new String[] {"defaults", "read", "-g", "AppleInterfaceStyle"});
+			proc.waitFor(100, TimeUnit.MILLISECONDS);
+			return proc.exitValue() == 0;
+		} catch (IOException | InterruptedException | IllegalThreadStateException ex) {
+			// IllegalThreadStateException thrown by proc.exitValue(), if process didn't terminate
+			LOG.warn("Determining MAC OS X dark mode settings failed. Assuming default (light) mode.");
+			return false;
+		}
 	}
 
 	private void gracefulShutdown() {
