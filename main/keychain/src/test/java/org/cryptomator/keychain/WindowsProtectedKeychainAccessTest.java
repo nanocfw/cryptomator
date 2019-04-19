@@ -5,41 +5,36 @@
  *******************************************************************************/
 package org.cryptomator.keychain;
 
+import org.cryptomator.common.Environment;
 import org.cryptomator.jni.WinDataProtection;
 import org.cryptomator.jni.WinFunctions;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 import org.mockito.Mockito;
 import org.mockito.stubbing.Answer;
 
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class WindowsProtectedKeychainAccessTest {
 
-	private Path tmpFile;
 	private WindowsProtectedKeychainAccess keychain;
 
 	@BeforeEach
-	public void setup() throws IOException {
-		tmpFile = Files.createTempFile("unit-tests", ".tmp");
-		System.setProperty("cryptomator.keychainPath", tmpFile.toAbsolutePath().normalize().toString());
+	public void setup(@TempDir Path tempDir) {
+		Path keychainPath = tempDir.resolve("keychainfile.tmp");
+		Environment env = Mockito.mock(Environment.class);
+		Mockito.when(env.getKeychainPath()).thenReturn(Stream.of(keychainPath));
 		WinFunctions winFunctions = Mockito.mock(WinFunctions.class);
 		WinDataProtection winDataProtection = Mockito.mock(WinDataProtection.class);
 		Mockito.when(winFunctions.dataProtection()).thenReturn(winDataProtection);
 		Answer<byte[]> answerReturningFirstArg = invocation -> ((byte[]) invocation.getArgument(0)).clone();
 		Mockito.when(winDataProtection.protect(Mockito.any(), Mockito.any())).thenAnswer(answerReturningFirstArg);
 		Mockito.when(winDataProtection.unprotect(Mockito.any(), Mockito.any())).thenAnswer(answerReturningFirstArg);
-		keychain = new WindowsProtectedKeychainAccess(Optional.of(winFunctions));
-	}
-
-	@AfterEach
-	public void teardown() throws IOException {
-		Files.deleteIfExists(tmpFile);
+		keychain = new WindowsProtectedKeychainAccess(Optional.of(winFunctions), env);
 	}
 
 	@Test
@@ -54,6 +49,7 @@ public class WindowsProtectedKeychainAccessTest {
 		Assertions.assertEquals(storedPw2, loadedPw2);
 		keychain.deletePassphrase("myPassword");
 		Assertions.assertNull(keychain.loadPassphrase("myPassword"));
+		Assertions.assertNotNull(keychain.loadPassphrase("myOtherPassword"));
 		Assertions.assertNull(keychain.loadPassphrase("nonExistingPassword"));
 	}
 

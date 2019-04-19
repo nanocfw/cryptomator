@@ -7,8 +7,10 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Optional;
 import java.util.Spliterator;
 import java.util.Spliterators;
 import java.util.function.Predicate;
@@ -26,9 +28,18 @@ public class Environment {
 
 	@Inject
 	public Environment() {
+		LOG.debug("user.language: {}", System.getProperty("user.language"));
+		LOG.debug("user.region: {}", System.getProperty("user.region"));
+		LOG.debug("logback.configurationFile: {}", System.getProperty("logback.configurationFile"));
 		LOG.debug("cryptomator.settingsPath: {}", System.getProperty("cryptomator.settingsPath"));
 		LOG.debug("cryptomator.ipcPortPath: {}", System.getProperty("cryptomator.ipcPortPath"));
 		LOG.debug("cryptomator.keychainPath: {}", System.getProperty("cryptomator.keychainPath"));
+		LOG.debug("cryptomator.logDir: {}", System.getProperty("cryptomator.logDir"));
+		LOG.debug("cryptomator.mountPointsDir: {}", System.getProperty("cryptomator.mountPointsDir"));
+	}
+
+	public boolean useCustomLogbackConfig() {
+		return getPath("logback.configurationFile").map(Files::exists).orElse(false);
 	}
 
 	public Stream<Path> getSettingsPath() {
@@ -41,6 +52,19 @@ public class Environment {
 
 	public Stream<Path> getKeychainPath() {
 		return getPaths("cryptomator.keychainPath");
+	}
+
+	public Optional<Path> getLogDir() {
+		return getPath("cryptomator.logDir").map(this::replaceHomeDir);
+	}
+
+	public Optional<Path> getMountPointsDir() {
+		return getPath("cryptomator.mountPointsDir").map(this::replaceHomeDir);
+	}
+
+	private Optional<Path> getPath(String propertyName) {
+		String value = System.getProperty(propertyName);
+		return Optional.ofNullable(value).map(Paths::get);
 	}
 
 	// visible for testing

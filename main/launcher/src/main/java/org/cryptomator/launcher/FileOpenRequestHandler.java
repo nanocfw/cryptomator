@@ -6,6 +6,13 @@
  *******************************************************************************/
 package org.cryptomator.launcher;
 
+import org.cryptomator.ui.model.AppLaunchEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
 import java.awt.Desktop;
 import java.awt.desktop.OpenFilesEvent;
 import java.io.File;
@@ -16,16 +23,7 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.BlockingQueue;
-import java.util.function.Function;
 import java.util.stream.Stream;
-
-import org.cryptomator.ui.model.AppLaunchEvent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.inject.Singleton;
 
 @Singleton
 class FileOpenRequestHandler {
