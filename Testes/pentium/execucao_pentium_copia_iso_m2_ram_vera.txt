@@ -1,0 +1,62 @@
+/media/pc/m2vera/centos.iso > /media/ramdisk/centos.iso
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          359.53M   8%  359.50MB/s    0:00:11          729.34M  16%  364.84MB/s    0:00:10            1.08G  25%  367.62MB/s    0:00:09            1.44G  33%  367.81MB/s    0:00:08            1.80G  42%  370.97MB/s    0:00:06            2.16G  50%  370.43MB/s    0:00:05            2.52G  59%  370.44MB/s    0:00:04            2.88G  67%  371.07MB/s    0:00:03            3.25G  75%  371.08MB/s    0:00:02            3.61G  84%  371.84MB/s    0:00:01            3.97G  92%  371.72MB/s    0:00:00            4.27G 100%  370.09MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          371.44M   8%  371.41MB/s    0:00:11          740.84M  16%  370.59MB/s    0:00:10            1.09G  25%  371.55MB/s    0:00:08            1.45G  33%  370.95MB/s    0:00:07            1.81G  42%  371.22MB/s    0:00:06            2.17G  50%  371.26MB/s    0:00:05            2.54G  59%  371.18MB/s    0:00:04            2.90G  67%  371.54MB/s    0:00:03            3.26G  76%  371.54MB/s    0:00:02            3.62G  84%  371.40MB/s    0:00:01            3.99G  93%  371.42MB/s    0:00:00            4.27G 100%  371.35MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          366.28M   8%  366.25MB/s    0:00:11          739.81M  16%  370.08MB/s    0:00:10            1.08G  25%  370.27MB/s    0:00:09            1.45G  33%  370.94MB/s    0:00:07            1.81G  42%  372.02MB/s    0:00:06            2.17G  50%  371.76MB/s    0:00:05            2.53G  59%  371.56MB/s    0:00:04            2.90G  67%  371.95MB/s    0:00:03            3.26G  76%  371.79MB/s    0:00:02            3.63G  84%  372.03MB/s    0:00:01            3.99G  93%  372.29MB/s    0:00:00            4.27G 100%  371.66MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          368.59M   8%  368.56MB/s    0:00:11          740.78M  16%  370.56MB/s    0:00:10            1.09G  25%  370.60MB/s    0:00:09            1.45G  33%  371.22MB/s    0:00:07            1.81G  42%  371.50MB/s    0:00:06            2.17G  50%  371.47MB/s    0:00:05            2.54G  59%  371.70MB/s    0:00:04            2.90G  67%  371.75MB/s    0:00:03            3.26G  76%  371.65MB/s    0:00:02            3.62G  84%  371.61MB/s    0:00:01            3.99G  93%  371.47MB/s    0:00:00            4.27G 100%  371.47MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          371.34M   8%  371.31MB/s    0:00:11          740.66M  16%  370.50MB/s    0:00:10            1.09G  25%  371.27MB/s    0:00:08            1.45G  33%  371.03MB/s    0:00:07            1.81G  42%  371.58MB/s    0:00:06            2.17G  50%  371.86MB/s    0:00:05            2.54G  59%  372.20MB/s    0:00:04            2.90G  67%  372.54MB/s    0:00:03            3.27G  76%  372.50MB/s    0:00:02            3.63G  84%  372.55MB/s    0:00:01            3.99G  93%  372.18MB/s    0:00:00            4.27G 100%  371.63MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          372.78M   8%  372.75MB/s    0:00:10          744.34M  17%  372.34MB/s    0:00:09            1.09G  25%  372.81MB/s    0:00:08            1.45G  33%  372.15MB/s    0:00:07            1.79G  41%  366.11MB/s    0:00:07            2.15G  50%  365.50MB/s    0:00:06            2.52G  58%  365.52MB/s    0:00:05            2.88G  67%  365.92MB/s    0:00:03            3.24G  75%  371.95MB/s    0:00:02            3.61G  84%  372.37MB/s    0:00:01            3.97G  92%  372.34MB/s    0:00:00            4.27G 100%  370.03MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          368.53M   8%  368.50MB/s    0:00:11          741.34M  16%  370.84MB/s    0:00:10            1.09G  25%  370.66MB/s    0:00:09            1.45G  33%  371.41MB/s    0:00:07            1.81G  42%  371.65MB/s    0:00:06            2.17G  50%  371.58MB/s    0:00:05            2.54G  59%  371.79MB/s    0:00:04            2.90G  67%  371.90MB/s    0:00:03            3.26G  76%  371.97MB/s    0:00:02            3.63G  84%  372.04MB/s    0:00:01            3.99G  93%  371.70MB/s    0:00:00            4.27G 100%  371.70MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          370.81M   8%  370.78MB/s    0:00:11          743.97M  17%  372.15MB/s    0:00:09            1.09G  25%  371.41MB/s    0:00:08            1.45G  33%  371.96MB/s    0:00:07            1.81G  42%  371.79MB/s    0:00:06            2.18G  50%  371.58MB/s    0:00:05            2.54G  59%  371.35MB/s    0:00:04            2.90G  67%  371.35MB/s    0:00:03            3.26G  76%  371.45MB/s    0:00:02            3.63G  84%  371.66MB/s    0:00:01            3.99G  93%  371.88MB/s    0:00:00            4.27G 100%  371.73MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          367.50M   8%  367.47MB/s    0:00:11          737.50M  16%  368.92MB/s    0:00:10            1.08G  25%  370.18MB/s    0:00:09            1.45G  33%  370.27MB/s    0:00:08            1.81G  42%  371.68MB/s    0:00:06            2.17G  50%  371.60MB/s    0:00:05            2.54G  59%  371.84MB/s    0:00:04            2.90G  67%  371.80MB/s    0:00:03            3.26G  76%  371.64MB/s    0:00:02            3.62G  84%  371.74MB/s    0:00:01            3.99G  93%  371.56MB/s    0:00:00            4.27G 100%  371.16MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+sending incremental file list
+centos.iso
+         32.00K   0%    0.00kB/s    0:00:00          368.22M   8%  368.19MB/s    0:00:11          738.53M  16%  369.43MB/s    0:00:10            1.09G  25%  370.76MB/s    0:00:09            1.45G  33%  370.90MB/s    0:00:07            1.81G  42%  372.23MB/s    0:00:06            2.17G  50%  372.11MB/s    0:00:05            2.54G  59%  372.15MB/s    0:00:04            2.90G  67%  371.53MB/s    0:00:03            3.26G  76%  371.08MB/s    0:00:02            3.62G  84%  371.13MB/s    0:00:01            3.99G  93%  371.28MB/s    0:00:00            4.27G 100%  371.32MB/s    0:00:11 (xfr#1, to-chk=0/1)
+
+sent 4.27G bytes  received 35 bytes  350.17M bytes/sec
+total size is 4.27G  speedup is 1.00
+----------------------------------------------------------
