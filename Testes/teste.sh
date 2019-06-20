@@ -34,40 +34,40 @@ sudo chmod 777 /media/ramdisk/
 sudo mount -t ramfs -o size=10G ramd /media/ramdisk
 mount | tail -n 1
 
-#rsync -qr /home/pc/Downloads/centos.iso $iso
-#rsync -qr /home/pc/Downloads/centos/ $pasta
+rsync -qr /home/pc/Downloads/centos.iso $iso
+rsync -qr /home/pc/Downloads/centos/ $pasta
 
-#read -n1 -r -p "monte o sistema sgx no hd e pressione uma tecla..." key
-#file_out="/home/pc/Documentos/execucao_pentium_copia_iso_ram_hd_sgx.txt"
-#run_copy $iso /media/pc/hdsgx/centos.iso -a $file_out
-#file_out="/home/pc/Documentos/execucao_pentium_copia_pasta_ram_hd_sgx.txt"
-#run_copy $pasta /media/pc/hdsgx/centos/ -r $file_out
+read -n1 -r -p "monte o sistema sgx no hd e pressione uma tecla..." key
+file_out="/home/pc/Documentos/execucao_pentium_copia_iso_ram_hd_sgx.txt"
+run_copy $iso /media/pc/hdsgx/centos.iso -a $file_out
+file_out="/home/pc/Documentos/execucao_pentium_copia_pasta_ram_hd_sgx.txt"
+run_copy $pasta /media/pc/hdsgx/centos/ -r $file_out
 
-#read -n1 -r -p "monte o sistema sgx no ssd e pressione uma tecla..." key
-#file_out="/home/pc/Documentos/execucao_pentium_copia_iso_ram_ssd_sgx.txt"
-#run_copy $iso /media/pc/ssdsgx/centos.iso -a $file_out
-#file_out="/home/pc/Documentos/execucao_pentium_copia_pasta_ram_ssd_sgx.txt"
-#run_copy $pasta /media/pc/ssdsgx/centos/ -r $file_out
+read -n1 -r -p "monte o sistema sgx no ssd e pressione uma tecla..." key
+file_out="/home/pc/Documentos/execucao_pentium_copia_iso_ram_ssd_sgx.txt"
+run_copy $iso /media/pc/ssdsgx/centos.iso -a $file_out
+file_out="/home/pc/Documentos/execucao_pentium_copia_pasta_ram_ssd_sgx.txt"
+run_copy $pasta /media/pc/ssdsgx/centos/ -r $file_out
 
-#read -n1 -r -p "monte o sistema sgx no m2 e pressione uma tecla..." key
-#file_out="/home/pc/Documentos/execucao_pentium_copia_iso_ram_m2_sgx.txt"
-#run_copy $iso /media/pc/m2sgx/centos.iso -a $file_out
-#file_out="/home/pc/Documentos/execucao_pentium_copia_pasta_ram_m2_sgx.txt"
-#run_copy $pasta /media/pc/m2sgx/centos/ -r $file_out
+read -n1 -r -p "monte o sistema sgx no m2 e pressione uma tecla..." key
+file_out="/home/pc/Documentos/execucao_pentium_copia_iso_ram_m2_sgx.txt"
+run_copy $iso /media/pc/m2sgx/centos.iso -a $file_out
+file_out="/home/pc/Documentos/execucao_pentium_copia_pasta_ram_m2_sgx.txt"
+run_copy $pasta /media/pc/m2sgx/centos/ -r $file_out
 
-#rm $iso
-#rm -r $pasta
+rm $iso
+rm -r $pasta
 
-#read -n1 -r -p "monte o sistema sgx no hd e pressione uma tecla..." key
-#rsync -qr /home/pc/Downloads/centos.iso /media/pc/hdsgx/centos.iso
+read -n1 -r -p "monte o sistema sgx no hd e pressione uma tecla..." key
+rsync -qr /home/pc/Downloads/centos.iso /media/pc/hdsgx/centos.iso
 
-#file_out="/home/pc/Documentos/execucao_pentium_copia_iso_hd_ram_sgx.txt"
-#run_copy /media/pc/hdsgx/centos.iso $iso -a $file_out
-#rm /media/pc/hdsgx/centos.iso
-#rsync -qr /home/pc/Downloads/centos/ /media/pc/hdsgx/centos/
-#file_out="/home/pc/Documentos/execucao_pentium_copia_pasta_hd_ram_sgx.txt"
-#run_copy /media/pc/hdsgx/centos/ $pasta -r $file_out
-#rm -r /media/pc/hdsgx/centos/
+file_out="/home/pc/Documentos/execucao_pentium_copia_iso_hd_ram_sgx.txt"
+run_copy /media/pc/hdsgx/centos.iso $iso -a $file_out
+rm /media/pc/hdsgx/centos.iso
+rsync -qr /home/pc/Downloads/centos/ /media/pc/hdsgx/centos/
+file_out="/home/pc/Documentos/execucao_pentium_copia_pasta_hd_ram_sgx.txt"
+run_copy /media/pc/hdsgx/centos/ $pasta -r $file_out
+rm -r /media/pc/hdsgx/centos/
 
 read -n1 -r -p "monte o sistema sgx no ssd e pressione uma tecla..." key
 rsync -qr /home/pc/Downloads/centos.iso /media/pc/ssdsgx/centos.iso
@@ -90,12 +90,11 @@ rsync -qr /home/pc/Downloads/centos/ /media/pc/m2sgx/centos/
 file_out="/home/pc/Documentos/execucao_pentium_copia_pasta_m2_ram_sgx.txt"
 run_copy /media/pc/m2sgx/centos/ $pasta -r $file_out
 rm -r /media/pc/m2sgx/centos/
-exit
-################################################################################### testar amanhã
+
 read -n1 -r -p "monte o sistema cryptomator e pressione uma tecla..." key
 
-#rsync -qr /home/pc/Downloads/centos.iso $iso
-#rsync -qr /home/pc/Downloads/centos/ $pasta
+rsync -qr /home/pc/Downloads/centos.iso $iso
+rsync -qr /home/pc/Downloads/centos/ $pasta
 
 file_out="/home/pc/Documentos/execucao_pentium_copia_iso_ram_hd_cryptomator.txt"
 run_copy $iso /media/pc/hdcryptomator/centos.iso -a $file_out
